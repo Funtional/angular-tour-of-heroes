@@ -1,3 +1,15 @@
-<p>
-  heroes works!
-</p>
+<!--使用 UppercasePipe 进行格式化-->
+<!--绑定表达式中的 uppercase 位于管道操作符（ | ）的右边，用来调用内置管道 UppercasePipe。-->
+<!--管道 是格式化字符串、金额、日期和其它显示数据的好办法。 Angular 发布了一些内置管道，而且你还可以创建自己的管道。-->
+<h2>{{hero.name | uppercase}} Details</h2>
+<div><span>id: </span>{{hero.id}}</div>
+
+<!--[(ngModel)] 是 Angular 的双向数据绑定语法。-->
+<!--这里把 hero.name 属性绑定到了 HTML 的 textbox 元素上，以便数据流可以双向流动：从 hero.name 属性流动到 textbox，并且从 textbox 流回到 hero.name 。-->
+<div>
+  <label>name:
+    <!--缺少 FormsModule 虽然 ngModel 是一个有效的 Angular 指令，不过它在默认情况下是不可用的。
+        它属于一个可选模块 FormsModule，你必须自行添加此模块才能使用该指令。-->
+    <input [(ngModel)]="hero.name" placeholder="name">
+  </label>
+</div>
