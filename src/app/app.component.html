@@ -1,7 +1,21 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!--双花括号语法是 Angular 的插值绑定语法-->
 <h1>{{title}}</h1>
+
+<nav>
+  <!--routerLink 属性的值为 "/heroes"，路由器会用它来匹配出指向 HeroesComponent 的路由。 -->
+  <!--routerLink 是 RouterLink 指令的选择器，它会把用户的点击转换为路由器的导航操作。-->
+  <!--它是 RouterModule 中公开的另一个指令。-->
+  <a routerLink="/heroes">Heroes</a>
+</nav>
+
 <!--要显示 HeroesComponent 你必须把它加到壳组件 AppComponent 的模板中。-->
 <!--别忘了，app-heroes 就是 HeroesComponent 的 元素选择器。 所以，只要把 <app-heroes> 元素添加到 AppComponent 的模板文件中就可以了，就放在标题下方。-->
-<app-heroes></app-heroes>
+<!--<app-heroes></app-heroes>-->
+
+<!--之所以移除 <app-heroes>，是因为只有当用户导航到这里时，才需要显示 HeroesComponent。-->
+<!--<router-outlet> 会告诉路由器要在哪里显示路由到的视图。-->
+<!--能在 AppComponent 中使用 RouterOutlet，是因为 -->
+<!--AppModule 导入了 AppRoutingModule，而 AppRoutingModule 中导出了 RouterModule。-->
+<router-outlet></router-outlet>
 <app-messages></app-messages>
