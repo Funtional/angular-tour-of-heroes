@@ -39,7 +39,7 @@ h4 {
 }
 .module:hover {
   background-color: #eee;
-  cursor: pointer;
+  cursor: pointer; /*cursor 光标*/
   color: #607d8b;
 }
 .grid-pad {

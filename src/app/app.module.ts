@@ -1,5 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
 
 import {AppComponent} from './app.component';
 import {HeroesComponent} from './heroes/heroes.component';
@@ -10,6 +11,8 @@ import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {InMemoryDataService} from './in-memory-data.service';
+import {HttpClientModule} from '@angular/common/http';
 
 // 注意 AppModule 声明了应用中的所有组件
 // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
@@ -23,8 +26,16 @@ import {DashboardComponent} from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
+    // 把 FormsModule 添加到 @NgModule 元数据的 imports 数组中，这里是该应用所需外部模块的列表。
     FormsModule,
-    AppRoutingModule // 把 FormsModule 添加到 @NgModule 元数据的 imports 数组中，这里是该应用所需外部模块的列表。
+    AppRoutingModule,
+    HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
