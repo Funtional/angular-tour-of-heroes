@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {Hero} from './hero';
 import {HEROES} from './mock-heroes';
 import {Observable, of} from 'rxjs';
+import {MessageService} from './message.service';
 
 // 注意，这个新的服务导入了 Angular 的 Injectable 符号，并且给这个服务类添加了 @Injectable() 装饰器。 它把这个类标记为依赖注入系统的参与者之一。
 // HeroService 类将会提供一个可注入的服务，并且它还可以拥有自己的待注入的依赖。 目前它还没有依赖，但是很快就会有了。
@@ -14,13 +15,19 @@ import {Observable, of} from 'rxjs';
 })
 export class HeroService {
 
-  constructor() {
+  // 添加一个私有的 messageService 属性参数。
+  // Angular 将会在创建 HeroService 时把 MessageService 的单例注入到这个属性中。
+  constructor(private messageService: MessageService) {
+    // 这是一个典型的“服务中的服务”场景：
+    // 你把 MessageService 注入到了 HeroService 中，而 HeroService 又被注入到了 HeroesComponent 中。
   }
 
   // getHeroes(): Hero[] {
   //   return HEROES;
   // }
   getHeroes(): Observable<Hero[]> {
+    // send the message _after_ fetching the heroes
+    this.messageService.add('HeroService: fetched heroes');
     return of(HEROES);
   }
 }
