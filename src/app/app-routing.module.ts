@@ -1,9 +1,12 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HeroesComponent} from './heroes/heroes.component';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  {path: 'heroes', component: HeroesComponent}
+  {path: 'heroes', component: HeroesComponent},
+  {path: 'dashboard', component: DashboardComponent},
+  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
 ];
 
 // 你将会使用 RouterModule 中的 Routes 类来配置路由器，所以还要从 @angular/router 库中导入这两个符号。

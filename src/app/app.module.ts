@@ -9,6 +9,7 @@ import {FormsModule} from '@angular/forms'; // <-- NgModel lives here
 import {HeroDetailComponent} from './hero-detail/hero-detail.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 // 注意 AppModule 声明了应用中的所有组件
 // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
@@ -17,7 +18,8 @@ import {AppRoutingModule} from './app-routing.module';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent // HeroesComponent 已经声明在了 @NgModule.declarations 数组中。
+    MessagesComponent,
+    DashboardComponent // HeroesComponent 已经声明在了 @NgModule.declarations 数组中。
   ],
   imports: [
     BrowserModule,
