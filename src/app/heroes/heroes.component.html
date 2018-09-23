@@ -21,14 +21,13 @@
   </li>
 </ul>
 
-<div *ngIf="selectedHero">
 
-  <h2>{{selectedHero.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
+<!--把原来的 HeroesComponent 重构成两个组件带来了一些优点，无论是现在还是未来：-->
+<!--你通过缩减 HeroesComponent 的职责简化了该组件。-->
+<!--你可以把 HeroDetailComponent 改进成一个功能丰富的英雄编辑器，而不用改动父组件 HeroesComponent。-->
+<!--你可以改进 HeroesComponent，而不用改动英雄详情视图。-->
+<!--将来你可以在其它组件的模板中重复使用 HeroDetailComponent。-->
 
-</div>
+<!--[hero]="selectedHero" 是 Angular 的属性绑定语法。-->
+<!--这是一种单向数据绑定。-->
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
