@@ -20,7 +20,7 @@ export class HeroesComponent implements OnInit {
 
   heroes: Hero[];
 
-  selectedHero: Hero;
+  // selectedHero: Hero;
 
   // 这个参数同时做了两件事：1. 声明了一个私有 heroService 属性，2. 把它标记为一个 HeroService 的注入点。
   // 当 Angular 创建 HeroesComponent 时，依赖注入系统就会把这个 heroService 参数设置为 HeroService 的单例对象。
@@ -37,9 +37,9 @@ export class HeroesComponent implements OnInit {
     // 之后交由 Angular 处理，它会在构造出 HeroesComponent 的实例之后的某个合适的时机调用 ngOnInit。
   }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-  }
+  // onSelect(hero: Hero): void {
+  //   this.selectedHero = hero;
+  // }
 
   // 可观察（Observable）的数据
   getHeroes(): void {
