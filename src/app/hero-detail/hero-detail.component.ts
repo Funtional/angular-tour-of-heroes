@@ -36,7 +36,7 @@ export class HeroDetailComponent implements OnInit {
   // 刷新浏览器，应用挂了。出现一个编译错误，因为 HeroService 没有一个名叫 getHero() 的方法。 这就添加它。
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.heroService.getHero(id)
+    this.heroService.getHeroByApi(id)
       .subscribe(hero => this.hero = hero);
   }
 
