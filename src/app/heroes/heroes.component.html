@@ -23,8 +23,20 @@
     <a routerLink="/detail/{{hero.id}}">
       <span class="badge">{{hero.id}}</span> {{hero.name}}
     </a>
+    <button class="delete" title="delete hero"
+            (click)="delete(hero)">x
+    </button>
   </li>
 </ul>
+<div>
+  <label>Hero name:
+    <input #addHeroName/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(addHeroName.value); addHeroName.value=''">
+    add
+  </button>
+</div>
 
 
 <!--把原来的 HeroesComponent 重构成两个组件带来了一些优点，无论是现在还是未来：-->
