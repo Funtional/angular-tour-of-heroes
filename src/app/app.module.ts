@@ -11,6 +11,7 @@ import {MessagesComponent} from './messages/messages.component';
 import {AppRoutingModule} from './app-routing.module';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
+import {HeroSearchComponent} from './hero-search/hero-search.component';
 
 // 注意 AppModule 声明了应用中的所有组件
 // 每个组件都必须声明在（且只能声明在）一个 NgModule 中。
@@ -20,7 +21,8 @@ import {HttpClientModule} from '@angular/common/http';
     HeroesComponent,
     HeroDetailComponent,
     MessagesComponent,
-    DashboardComponent // HeroesComponent 已经声明在了 @NgModule.declarations 数组中。
+    DashboardComponent,
+    HeroSearchComponent // HeroesComponent 已经声明在了 @NgModule.declarations 数组中。
   ],
   imports: [
     BrowserModule,
