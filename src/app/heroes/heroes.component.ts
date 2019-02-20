@@ -2,9 +2,12 @@ import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
 import {HeroService} from '../hero.service';
 
+// 组件的元数据告诉 Angular 到哪里获取它需要的主要构造块，以创建和展示这个组件及其视图。
+// 具体来说，它把一个模板（无论是直接内联在代码中还是引用的外部文件）和该组件关联起来。
+// 该组件及其模板，共同描述了一个视图。
 @Component({ // @Component 是个装饰器函数，用于为该组件指定 Angular 所需的元数据。
              //   selector— 组件的选择器（CSS 元素选择器）
-             //   templateUrl— 组件模板文件的位置。
+  //   templateUrl— 组件模板文件的位置。 这个模板定义了该组件的宿主视图。
              //   styleUrls— 组件私有 CSS 样式表文件的位置。
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
